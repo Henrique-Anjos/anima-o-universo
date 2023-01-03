@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    min-height: 100vh;/*altura minima de 100% da tela*/
+    background: #0c192c;
+}
+.container{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+.bolhas{
+    position: absolute;
+    display: flex;
+}.bolhas span{
+    width: 30px;
+    height: 30px;
+    background: #ff05b4;
+    margin: 0 4px;/*o 0 ´para cima e para baixo e 4 para os lados*/
+    border-radius: 50%;
+    box-shadow: 0 0 10px #470336, 0 0 50px #970484, 0 0 100px #fa07fa;/*x,y,desfoco,espessuraa*/
+    animation: animar calc(150s/var(--i)) linear infinite;
+}
+
+
+@keyframes animar{
+    0%{
+        transform: translateY(100vh) scale(0);/*começa embaixo em 100%*/
+    }
+    100%{
+        transform: translateY(-10vh) scale(1);/*aqui é o termino das bolhas*/
+    }
+}
+/*nth... ele seleciona elementos especifico*/
+.bolhas span:nth-of-type(even){
+    background-color: #2d3cff;
+    box-shadow: 0 0 10px#0614d3, 0 0 50px #0cabdb, 0 0 100px #00ccff
+}
